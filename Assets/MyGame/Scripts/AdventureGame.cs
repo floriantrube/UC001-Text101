@@ -11,6 +11,7 @@ using UnityEditor;
 
 public class AdventureGame : MonoBehaviour
 {
+    const int MAXSTATERESCUE = 30;
 
     //private static readonly System.Random getrandom = new System.Random(123);
 
@@ -33,7 +34,7 @@ public class AdventureGame : MonoBehaviour
     private bool wait, overrideTextComponent;
     private bool infoOn;
     private string overrideText;
-    private int statesUntilRescue;
+
 
 
     private State actualState;
@@ -67,7 +68,7 @@ public class AdventureGame : MonoBehaviour
         textIntroComponent.text = actualState.GetStateStory();
         textComponentChoices.text = actualState.GetStateStoryMenue();
         ResetValues();
-        statesUntilRescue = 30;
+        //statesUntilRescue = 30;
         wait = false;
         Debug.Log("Enter");
 
@@ -109,7 +110,7 @@ public class AdventureGame : MonoBehaviour
         passedStates += 1;
         dehydration = (dehydration < 20) ? dehydration += 0.5 : dehydration = 20;
 
-        if (passedStates == statesUntilRescue)
+        if (passedStates == MAXSTATERESCUE)
         {
             overrideTextComponent = wait = false;
             Debug.Log("reached passed state counts: " + passedStates);
