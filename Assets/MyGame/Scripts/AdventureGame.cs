@@ -18,6 +18,7 @@ public class AdventureGame : MonoBehaviour
     const string KNITDO = "Knit.Do";
     const string FIGHTATTACK = "Fight.Attack";
     const string COLLECTDO = "Collect.Do";
+    const string INFODONE = "Info.Done";
 
     //private static readonly System.Random getrandom = new System.Random(123);
 
@@ -163,13 +164,13 @@ public class AdventureGame : MonoBehaviour
 
         }
 
-        if (nextState.name == "Info.Done" || nextState.name == "Collect.Info")
+        if (nextState.name == INFODONE || nextState.name == "Collect.Info")
         {
             SetupInfoUI();
             overrideTextComponent = false;
         }
 
-        if (currentState.name == "Info.Human" && nextState.name == "Info.Done")
+        if (currentState.name == "Info.Human" && nextState.name == INFODONE)
         {
             overrideTextComponent = true;
             overrideText = "Notification: Crime scene investigation revealed that robots destroyed all water inventories and water sponge warehouses. " + "\n \n" +
@@ -178,7 +179,7 @@ public class AdventureGame : MonoBehaviour
 
         }
 
-        if (currentState.name == "Info.Accident" && nextState.name == "Info.Done")
+        if (currentState.name == "Info.Accident" && nextState.name == INFODONE)
         {
             overrideTextComponent = true;
             overrideText = "Magda is a 21 year old woman. She loves salty food and is doing a lot of sports." + "\n" +
@@ -188,7 +189,7 @@ public class AdventureGame : MonoBehaviour
 
         }
 
-        if (currentState.name == "Info.Done" && nextState.name == "Collect")
+        if (currentState.name == INFODONE && nextState.name == "Collect")
         {
             overrideTextComponent = false;
         }
