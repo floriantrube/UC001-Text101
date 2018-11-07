@@ -24,6 +24,7 @@ public class AdventureGame : MonoBehaviour
     const string FIGHTDO = "Fight.Do";
     const string INFOHUMAN = "Info.Human";
     const string INFOACCIDENT = "Info.Accident";
+    const string COLLECT = "Collect";
 
     //private static readonly System.Random getrandom = new System.Random(123);
 
@@ -194,7 +195,7 @@ public class AdventureGame : MonoBehaviour
 
         }
 
-        if (currentState.name == INFODONE && nextState.name == "Collect")
+        if (currentState.name == INFODONE && nextState.name == COLLECT)
         {
             overrideTextComponent = false;
         }
