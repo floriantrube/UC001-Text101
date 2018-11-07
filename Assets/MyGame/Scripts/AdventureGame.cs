@@ -20,6 +20,7 @@ public class AdventureGame : MonoBehaviour
     const string COLLECTDO = "Collect.Do";
     const string INFODONE = "Info.Done";
     const string COLLECTINFO = "Collect.Info";
+    const string KNITINFO = "Knit.Info";
 
     //private static readonly System.Random getrandom = new System.Random(123);
 
@@ -205,7 +206,7 @@ public class AdventureGame : MonoBehaviour
         }
 
 
-        if ((currentState.name == "Knit.Info" || nextState.name == KNITDO) && nextState.name == KNITDO)
+        if ((currentState.name == KNITINFO || nextState.name == KNITDO) && nextState.name == KNITDO)
         {
             if (collectedWool >= 2)
             {
