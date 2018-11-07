@@ -23,6 +23,7 @@ public class AdventureGame : MonoBehaviour
     const string KNITINFO = "Knit.Info";
     const string FIGHTDO = "Fight.Do";
     const string INFOHUMAN = "Info.Human";
+    const string INFOACCIDENT = "Info.Accident";
 
     //private static readonly System.Random getrandom = new System.Random(123);
 
@@ -183,7 +184,7 @@ public class AdventureGame : MonoBehaviour
 
         }
 
-        if (currentState.name == "Info.Accident" && nextState.name == INFODONE)
+        if (currentState.name == INFOACCIDENT && nextState.name == INFODONE)
         {
             overrideTextComponent = true;
             overrideText = "Magda is a 21 year old woman. She loves salty food and is doing a lot of sports." + "\n" +
