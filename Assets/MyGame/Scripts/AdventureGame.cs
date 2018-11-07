@@ -15,6 +15,7 @@ public class AdventureGame : MonoBehaviour
     const int MAXDEHYDRATION = 20;
 
     const string INFOALARM = "Info.Alarm";
+    const string KNITDO = "Knit.Do";
 
     //private static readonly System.Random getrandom = new System.Random(123);
 
@@ -147,7 +148,7 @@ public class AdventureGame : MonoBehaviour
 
         if (currentState.name == nextState.name)
         {
-            if (nextState.name == "Knit.Do" || nextState.name == "Fight.Attack" || nextState.name == "Collect.Do")
+            if (nextState.name == KNITDO || nextState.name == "Fight.Attack" || nextState.name == "Collect.Do")
             {
                 wait = false;
                 overrideText = "reset in do|attack";
@@ -200,7 +201,7 @@ public class AdventureGame : MonoBehaviour
         }
 
 
-        if ((currentState.name == "Knit.Info" || nextState.name == "Knit.Do") && nextState.name == "Knit.Do")
+        if ((currentState.name == "Knit.Info" || nextState.name == KNITDO) && nextState.name == KNITDO)
         {
             if (collectedWool >= 2)
             {
@@ -220,7 +221,7 @@ public class AdventureGame : MonoBehaviour
             return nextState;
         }
 
-        if (currentState.name == "Knit.Do" && currentState.name == "Collect.Info")
+        if (currentState.name == KNITDO && currentState.name == "Collect.Info")
         {
             overrideTextComponent = false;
         }
